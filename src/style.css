@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background: fixed url(https://media.istockphoto.com/id/1354989842/photo/banner-with-books-business-and-education-background-back-to-school-concept.jpg?s=1024x1024&w=is&k=20&c=cCis5EXOZ-aCwz_ocoRUI64M-qFVeSAzv3vyNDrF7Vg=) no-repeat center center/cover; */
+  font-family: "Roboto", sans-serif;
+  background-color: #f5f5f5;
+  color: rgb(10, 27, 69);
+}
+
+.booklist {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.book {
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 5px;
+  padding: 10px;
+  /* border: 2px dotted red; */
+}
+
+.book h3 {
+  color: rgb(143, 114, 232);
+  font-size: 1rem;
+}
+
+.book h4 {
+  color: #617d98;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.book h5 {
+  color: rgb(95, 65, 166);
+  font-size: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+article img {
+  width: 100%;
+}
