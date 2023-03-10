@@ -65,7 +65,9 @@ function BookList() {
           title={firstBook.title}
           author={firstBook.author}
           price={firstBook.price}
-        />
+        >
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </Book>
         <Book
           img={secondBook.img}
           title={secondBook.title}
@@ -125,13 +127,15 @@ const Message = () => {
 };
 
 const Book = (props) => {
-  console.log(props);
+  // const { img, title, author, price } = props;  // Props Destructuring
+  const { img, title, author, price, children } = props; // Props Destructuring
   return (
     <article className="book">
-      <img src={props.img} alt="" />
-      <h3> {props.title} </h3>
-      <h4> {props.author} </h4>
-      <h5> {props.price} </h5>
+      <img src={img} alt="" />
+      <h3> {title} </h3>
+      <h4> {author} </h4>
+      {children}
+      <h5> {price} </h5>
     </article>
   );
 };
