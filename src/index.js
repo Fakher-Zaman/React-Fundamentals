@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 
 // CSS
 import "./style.css";
@@ -103,13 +103,30 @@ function BookList() {
 }
 
 const Book = ({ img, title, author, price }) => {
-  // const { img, title, author, price } = props;  // Props Destructuring
+  // attribute, eventHandler
+  // onClick, onMouseOver
+  const clickHandler = (e) => {
+    console.log(e);
+    console.log(e.target);
+    alert("Hello World");
+  };
+  const complexExample = (author) => {
+    console.log(author);
+  };
+
   return (
-    <article className="book">
+    <article className="book" onMouseOver={() => {
+      console.log(title);
+    }}>
       <img src={img} alt="" />
+      {/* <h3 onClick={() => console.log(title)}>{title}</h3> */}
       <h3> {title} </h3>
       <h4> {author} </h4>
       <h5> {price} </h5>
+      <div>
+        <button type="button" onClick={clickHandler}>Reference Example</button>
+        <button type="button" onClick={() => complexExample(author)}>More Complex Example</button>
+      </div>
     </article>
   );
 };
@@ -126,9 +143,12 @@ const Message = () => {
       }}
     >
       <h1> Mini Book App </h1>
-      <p> Buying and Selling the books from here </p>;
+      <p> Buying and Selling the books from here </p>
     </div>
   );
 };
 
-ReactDOM.render(<BookList />, document.getElementById("root"));
+// ReactDOM.render(<BookList />, document.getElementById("root"));
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(<BookList tab="home" />);
