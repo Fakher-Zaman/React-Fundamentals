@@ -1,152 +1,30 @@
 import React from "react";
 import { createRoot } from 'react-dom/client';
-
 // CSS
 import "./style.css";
-
+// Important components
+import Message from "./Message";
+import Book from "./Book";
 // Startup Array
-const books = [
-  {
-    id: 1,
-    img: "https://images-na.ssl-images-amazon.com/images/I/81eB+7+CkUL._AC_UL200_SR200,200_.jpg",
-    title: "I Love You to the Moon and Back",
-    author: "Amelia Hepworth",
-    price: "$200",
-  },
-
-  {
-    id: 2,
-    img: "https://images-na.ssl-images-amazon.com/images/I/81YYStQvnsL._AC_UL250_SR250,250_.jpg",
-    title: "I Love You Like Not Otter",
-    author: "Ross Rosner",
-    price: "$300",
-  },
-
-  {
-    id: 3,
-    img: "https://images-na.ssl-images-amazon.com/images/I/81nzxODnaJL._AC_UL250_SR250,250_.jpg",
-    title: "If Animal Kissed Good Night",
-    author: "Ann Whitford Paul",
-    price: "$400",
-  },
-
-  {
-    id: 4,
-    img: "https://images-na.ssl-images-amazon.com/images/I/51o4b5AdNLL._AC_UL250_SR250,250_.jpg",
-    title: "Where's Spot",
-    author: "Eric Hill",
-    price: "$500",
-  },
-
-  {
-    id: 5,
-    img: "https://images-na.ssl-images-amazon.com/images/I/81TMvHnKlwL._AC_UL250_SR250,250_.jpg",
-    title: "Guess How Much I Love You",
-    author: "Sam McBratney",
-    price: "$250",
-  },
-
-  {
-    id: 6,
-    img: "https://images-na.ssl-images-amazon.com/images/I/713lRguJLsL._AC_UL250_SR250,250_.jpg",
-    title: "You're My Little Cuddle Bug",
-    author: "Nikola Edwards",
-    price: "$480",
-  },
-
-  {
-    id: 7,
-    img: "https://images-na.ssl-images-amazon.com/images/I/811Ex4ttTvL._AC_UL250_SR250,250_.jpg",
-    title: "Why a Daughter Needs a Mom",
-    author: " Gregory E. Lang",
-    price: "$520",
-  },
-
-  {
-    id: 8,
-    img: "https://images-na.ssl-images-amazon.com/images/I/817K85jOeuL._AC_UL250_SR250,250_.jpg",
-    title: "Grandma Loves You",
-    author: "Danielle McLean",
-    price: "$410",
-  },
-
-  {
-    id: 9,
-    img: "https://images-na.ssl-images-amazon.com/images/I/818+E-4tgjL._AC_UL250_SR250,250_.jpg",
-    title: "Grandpa And Me",
-    author: "Danielle McLean",
-    price: "$720",
-  },
-
-  {
-    id: 10,
-    img: "https://images-na.ssl-images-amazon.com/images/I/81OZqIGVnKL._AC_UL250_SR250,250_.jpg",
-    title: "Grandma Loves Me",
-    author: "Marianne Richmond",
-    price: "$600",
-  },
-];
+import { books } from "./books";
+// Testing File
+import { greeting } from "./testing/testing";
 
 // Nested components, React Tools
 function BookList() {
+  console.log(greeting);
   return (
     <>
       <Message />
       <section className="booklist">
         {books.map((book, index) => {
           // return <Book key={book.id} book={book}></Book>;
-          return <Book key={book.id} {...book}></Book>
+          return <Book key={book.id} {...book}></Book>  // Spread Operator
         })}
       </section>
     </>
   );
 }
-
-const Book = ({ img, title, author, price }) => {
-  // attribute, eventHandler
-  // onClick, onMouseOver
-  const clickHandler = (e) => {
-    console.log(e);
-    console.log(e.target);
-    alert("Hello World");
-  };
-  const complexExample = (author) => {
-    console.log(author);
-  };
-
-  return (
-    <article className="book" onMouseOver={() => {
-      console.log(title);
-    }}>
-      <img src={img} alt="" />
-      {/* <h3 onClick={() => console.log(title)}>{title}</h3> */}
-      <h3> {title} </h3>
-      <h4> {author} </h4>
-      <h5> {price} </h5>
-      <div>
-        <button type="button" onClick={clickHandler}>Reference Example</button>
-        <button type="button" onClick={() => complexExample(author)}>More Complex Example</button>
-      </div>
-    </article>
-  );
-};
-
-const Message = () => {
-  return (
-    <div
-      style={{
-        color: "rgb(60 62 67)",
-        margin: "auto",
-        fontSize: "0.95rem",
-        marginTop: "0.25rem",
-        textAlign: "center",
-      }}
-    >
-      <h1> Mini Book App </h1>
-      <p> Buying and Selling the books from here </p>
-    </div>
-  );
-};
 
 // ReactDOM.render(<BookList />, document.getElementById("root"));
 const container = document.getElementById('root');
