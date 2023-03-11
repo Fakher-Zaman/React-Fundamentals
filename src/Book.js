@@ -8,9 +8,9 @@ const Book = ({ img, title, author, price }) => {
         console.log(e.target);
         // alert("Hello World");
     };
-    const complexExample = (author) => {
-        console.log(author);
-    };
+    // const complexExample = (author) => {
+    //     console.log(author);
+    // };
 
     return (
         <article className="book" onMouseOver={() => {
@@ -21,10 +21,10 @@ const Book = ({ img, title, author, price }) => {
             <h3> {title} </h3>
             <h4> {author} </h4>
             <h5> {price} </h5>
-            <div>
-                <button type="button" onClick={clickHandler}>Reference Example</button>
-                <button type="button" onClick={() => complexExample(author)}>More Complex Example</button>
-            </div>
+            {/* <div> */}
+            <button type="button" onClick={clickHandler}>Read More</button>
+            {/* <button type="button" onClick={() => complexExample(author)}>More Complex Example</button> */}
+            {/* </div> */}
         </article>
     );
 };
