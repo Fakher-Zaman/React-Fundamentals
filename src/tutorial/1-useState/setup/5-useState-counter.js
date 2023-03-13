@@ -17,6 +17,14 @@ const UseStateCounter = () => {
           increase
         </button>
       </section>
+      <section>
+        <button className="btn" onClick={() => setTimeout(() => setValue((prevState) => prevState - 1), 2000)}>
+          decrease later
+        </button>
+        <button className="btn" onClick={() => setTimeout(() => setValue((prevState) => prevState + 1), 2000)}>
+          increase later
+        </button>
+      </section>
     </>
   );
 };
