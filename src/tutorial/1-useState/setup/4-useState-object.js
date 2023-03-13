@@ -7,15 +7,8 @@ const UseStateObject = () => {
     message: 'random message',
   });
 
-  const [name, setName] = useState('peter');
-  const [age, setAge] = useState(24);
-  const [message, setMessage] = useState('random message');
-
   const changeMessage = () => {
-    // setPerson({ ...person, message: 'hello world' });
-    setName('john');
-    setAge(25);
-    setMessage('hello world');
+    setPerson({ ...person, message: 'hello world' });
   };
 
   return (
@@ -23,7 +16,7 @@ const UseStateObject = () => {
       <h3>{person.name}</h3>
       <h3>{person.age}</h3>
       <h3>{person.message}</h3>
-      <button className="btn" onClick={changeMessage}>
+      <button className="btn" onClick={(changeMessage)}>
         change message
       </button>
     </>
