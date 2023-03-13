@@ -1,6 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Setup from './tutorial/1-useState/setup/1-error-example';
+import Final from './tutorial/1-useState/final/1-error-example';
+
 function App() {
-  return <h2>Advanced React Tutorials</h2>
+  return (
+    <div className="container">
+      <Setup />
+      <Final />
+    </div>
+  );
 }
 
 export default App;
