@@ -1,10 +1,10 @@
 import React from 'react';
-import Final from './tutorial/1-useState/final/3-useState-array';
+import Setup from './tutorial/2-useEffect/setup/1-useEffect-basics';
 
 function App() {
   return (
     <div className="container">
-      <Final />
+      <Setup />
     </div>
   );
 }
