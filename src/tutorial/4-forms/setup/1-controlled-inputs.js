@@ -1,14 +1,18 @@
-import React from 'react';
-// JS
+import React, { useState } from 'react';
+// In JavaScript, we can get the value of an input field by using the value property of the input element.
 // const input = document.getElementById('myText');
 // const inputValue = input.value
-// React
+
+// In React, the value of an input field is set by the value attribute.
 // value, onChange
 
 const ControlledInputs = () => {
+  const [firstName, setFirstName] = useState('');
+  const [email, setEmail] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Hello World!");
+    console.log(`Name: ` + firstName + `\nEmail: ` + email);
   };
 
   return (
@@ -18,11 +22,11 @@ const ControlledInputs = () => {
           <h2>Simple Form</h2>
           <div className='form-control'>
             <label htmlFor='firstName'>Name : </label>
-            <input type='text' id='firstName' name='firstName' />
+            <input type='text' id='firstName' name='firstName' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
           </div>
           <div className='form-control'>
             <label htmlFor='email'>Email : </label>
-            <input type='text' id='email' name='email' />
+            <input type='text' id='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
           <button type='submit' className='btn'>add person</button>
         </form>
