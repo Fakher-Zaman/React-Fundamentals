@@ -5,4 +5,4 @@ npm install react-router-dom
 
 ```
 
-"react-router-dom": "^5.2.0"
+"react-router-dom": "^^5.3.4"
